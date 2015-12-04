@@ -8,17 +8,17 @@
         android:layout_height="0dp"
         android:layout_weight="0.54" >
         <Button
-            android:id="@+id/Button01"
+            android:id="@+id/button_to_fleamarket"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1.00"
-            android:text="Button" />
+            android:text="fleamarket" />
         <Button
-            android:id="@+id/Button02"
+            android:id="@+id/button_to_news"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1.00"
-            android:text="Button" />
+            android:text="news" />
     </LinearLayout>
     <Button
         android:id="@+id/button3"
@@ -51,10 +51,10 @@
             android:layout_weight="1"
             android:orientation="vertical" >
             <Button
-                android:id="@+id/button4"
+                android:id="@+id/button_to_job"
                 android:layout_width="match_parent"
                 android:layout_height="152dp"
-                android:text="Button" />
+                android:text="job" />
             <Button
                 android:id="@+id/button5"
                 android:layout_width="match_parent"
@@ -72,10 +72,10 @@
                 android:layout_height="wrap_content"
                 android:text="Button" />
             <Button
-                android:id="@+id/button7"
+                android:id="@+id/button_to_others"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="Button" />
+                android:text="others" />
         </LinearLayout>
     </LinearLayout>
 

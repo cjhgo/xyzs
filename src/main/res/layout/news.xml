@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--关于新闻信息的主界面,与news.java相对应-->
+<TabHost
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:id="@+id/news_TabHost_showNews">
+
+    <TabWidget
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@android:id/tabs">
+    </TabWidget>
+
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@android:id/tabcontent"
+        android:layout_marginTop="50dp">
+
+        <ListView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/news_listView_newsItem"
+            android:divider="#83ccd2"
+            android:dividerHeight="2dp"/>
+
+    </FrameLayout>
+</TabHost>

@@ -34,7 +34,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
-            android:text="可借复本: "/>
+            android:text="馆藏复本: "/>
     </RelativeLayout>
     <RelativeLayout
         android:layout_width="wrap_content"

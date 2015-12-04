@@ -56,11 +56,24 @@ public class bookresult extends Activity implements XListView.IXListViewListener
     private int pagecount=2;
     private ArrayList<Bookinfo> booklist;
     private Bookinfo_adapter adapter;
+
+    private Bookinfo curbook;
+    private ProgressDialog progressDialog;
+    private int bookitem_status;
+    private String curbook_link;
+    private String bookitem_str;
+
     @Override
     public void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.xlist);
+
+
+        //15.5.23
+
+        bookitem_status=0;
+        //15.5.23
 
         mHandler = new Handler();
         Bundle bundle = this.getIntent().getExtras();
@@ -124,34 +137,46 @@ public class bookresult extends Activity implements XListView.IXListViewListener
     public void onItemClick(AdapterView<?> parent, final View view,
                             int position, long id)
     {
-        final AdapterView<?> par=parent;
-        final int posi=position;
-        final ProgressDialog progressDialog = new ProgressDialog(bookresult.this);
+
+        progressDialog= new ProgressDialog(bookresult.this);
         progressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
         progressDialog.show();
-        (new Handler()).postDelayed(new Runnable() {
+        curbook=(Bookinfo)parent.getItemAtPosition(position);
+        new Thread(new Runnable() {
             @Override
             public void run()
             {
-                Bookinfo curbook=(Bookinfo)par.getItemAtPosition(posi);
-
-                String curbook_link=curbook.get_link();
-
-                Intent getItem = new Intent(bookresult.this,bookitem.class);
-                Bundle postdata=new Bundle();
+                curbook_link = curbook.get_link();
+                bookitem_str=Htmlutil.getHtmlString(curbook_link);
+                if(bookitem_str!="")
+                {
+                    bookitem_status=1;
+                }
+                toBookitem();
+            }
+        }).start();
+    }
+    private void toBookitem()
+    {
+        mHandler.post(new Runnable() {
+            @Override
+            public void run()
+            {
+                progressDialog.dismiss();
+                if(bookitem_status==0)
+                {
+                    Toast.makeText(bookresult.this,R.string.searchbook_error,Toast.LENGTH_LONG).show();
+                    return;
+                }
+                Intent getItem = new Intent(bookresult.this, bookitem.class);
+                Bundle postdata = new Bundle();
 //                postdata.putString("url",curbook_link);
-                postdata.putString("data",Htmlutil.getHtmlString(curbook_link));
+                postdata.putString("data",bookitem_str);
                 getItem.putExtras(postdata);
                 progressDialog.dismiss();
                 startActivity(getItem);
-                //                Toast.makeText(getApplicationContext(), curbook_link,
-//                        Toast.LENGTH_SHORT).show();
             }
-        },2000);
-
-
-
-
+        });
     }
     private ArrayList<Bookinfo> getBookList(String htmldata,int...pagecount)
     {

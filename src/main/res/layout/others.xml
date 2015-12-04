@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="学术报告"
+        android:textSize="20dp"
+        android:id="@+id/buttonReport"
+        />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="通知公告"
+        android:textSize="20dp"
+        android:id="@+id/buttonNotice"
+        android:layout_alignParentRight="true"
+        />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="校标校训"
+        android:textSize="20dp"
+        android:id="@+id/buttonSchoolMotto"
+        android:layout_below="@+id/buttonReport"
+        />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="    校歌    "
+        android:textSize="20dp"
+        android:id="@+id/buttonSong"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/buttonNotice"
+        />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="    社团    "
+        android:textSize="20dp"
+        android:id="@+id/buttonSociety"
+        android:layout_below="@+id/buttonSchoolMotto"
+        />
+
+</LinearLayout>

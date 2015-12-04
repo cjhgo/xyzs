@@ -32,6 +32,35 @@
             android:label="mylib">
 
             </activity>
+        <activity android:name=".jwxx.Jwxx"
+            android:label="Jwxx">
+
+            </activity>
+        <activity android:name=".add.fleamarket">
+
+            </activity>
+        <activity android:name=".add.news">
+
+            </activity>
+        <activity android:name=".add.news_specificText">
+
+            </activity>
+        <activity android:name=".add.Two"></activity>
+
+        <activity android:name=".add.job"></activity>
+        <activity android:name=".add.job_specificText"></activity>
+        <activity android:name=".add.job_announcement"></activity>
+
+        <activity android:name=".add.grade"></activity>
+        <activity android:name=".add.grade_login"></activity>
+        <activity android:name=".add.others"></activity>
+        <activity android:name=".add.academicReport"></activity>
+        <activity android:name=".add.notice"></activity>
+        <activity android:name=".add.academic_report_Result"></activity>
+        <activity android:name=".add.notice_result"/>
+        <activity android:name=".add.motto"/>
+        <activity android:name=".add.song"/>
+        <activity android:name=".add.corporation"/>
     </application>
     <uses-permission android:name="android.permission.INTERNET"/>
 

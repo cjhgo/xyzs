@@ -15,6 +15,13 @@ import android.widget.RelativeLayout;
 import android.widget.TabHost;
 import android.widget.TabHost.*;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.bn.sample.add.fleamarket;
+import com.bn.sample.add.job;
+import com.bn.sample.add.news;
+import com.bn.sample.add.others;
+import com.bn.sample.jwxx.Jwxx;
 
 import org.w3c.dom.Text;
 
@@ -81,9 +88,58 @@ public class Sample1_1_Activity extends Activity {
 
             if(i ==0)
             {
+
+                final Intent to_fleamarket=new Intent(this,fleamarket.class);
+                Button button_to_fleamarket=(Button)tabhost.findViewById(R.id.button_to_fleamarket);
+                button_to_fleamarket.setOnClickListener(new View.OnClickListener() {
+                    // Start new list activity
+                    public void onClick(View v) {
+
+                        Bundle bundle=new Bundle();
+                        bundle.putString("fleamarket_Url", "http://justershou.sinaapp.com/market/home.php");
+                        to_fleamarket.putExtras(bundle);
+                        startActivity(to_fleamarket);
+
+                    }
+                });
+
+                final Intent to_news=new Intent(this,news.class);
+                Button button_to_news=(Button)tabhost.findViewById(R.id.button_to_news);
+                button_to_news.setOnClickListener(new View.OnClickListener() {
+                    // Start new list activity
+                    public void onClick(View v) {
+
+                        startActivity(to_news);
+//                        startActivity(bookInt);
+                    }
+                });
+
+
+                final Intent to_job = new Intent(this, job.class);
+                Button button_to_job=(Button)tabhost.findViewById(R.id.button_to_job);
+                button_to_job.setOnClickListener(new View.OnClickListener() {
+                    // Start new list activity
+                    public void onClick(View v) {
+
+                        startActivity(to_job);
+//                        startActivity(bookInt);
+                    }
+                });
+
+                final Intent to_others = new Intent(this, others.class);
+                Button button_to_other=(Button)tabhost.findViewById(R.id.button_to_others);
+                button_to_other.setOnClickListener(new View.OnClickListener() {
+                    // Start new list activity
+                    public void onClick(View v) {
+
+                        startActivity(to_others);
+//                        startActivity(bookInt);
+                    }
+                });
+
                 final Intent bookInt=new Intent(this,searchbook.class);
-                Button btn3=(Button)tabhost.findViewById(R.id.button3);
-                btn3.setOnClickListener(new View.OnClickListener() {
+                Button lib=(Button)tabhost.findViewById(R.id.button3);
+                lib.setOnClickListener(new View.OnClickListener() {
                     // Start new list activity
                     public void onClick(View v) {
 
@@ -91,14 +147,18 @@ public class Sample1_1_Activity extends Activity {
                     }
                 });
 
-                Button btn=(Button)tabhost.findViewById(R.id.button1);
-                btn.setOnClickListener(new View.OnClickListener() {
-                    // Start new list activity
-                    public void onClick(View v)
-                    {
-                        httpcli.login("1241901305","195118jkd");
-                    }
-                });
+//                final Intent jwxxx=new Intent(this, Jwxx.class);
+//                Button jwxx=(Button)tabhost.findViewById(R.id.button1);
+//                jwxx.setOnClickListener(new View.OnClickListener() {
+//                    // Start new list activity
+//                    public void onClick(View v)
+//                    {
+//
+//                        Toast.makeText(Sample1_1_Activity.this,"gun",Toast.LENGTH_LONG).show();
+//                        startActivity(jwxxx);
+////                        httpcli.login("1241901305","195118jkd");
+//                    }
+//                });
             }
         }
 

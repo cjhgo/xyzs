@@ -163,6 +163,7 @@ public class MyLib extends Activity
                     HttpResponse httpResponse = new DefaultHttpClient().execute(get);
                     HttpEntity entity = httpResponse.getEntity();
                     String res= EntityUtils.toString(entity);
+                    res=new String(res.getBytes("ISO-8859-1"), "UTF-8");
                     return  res;
                 }
                 else if(flag.equals("goonmybook"))
